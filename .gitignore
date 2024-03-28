@@ -1,0 +1,26 @@
+# Ignore arquivos de compilação e diretórios
+dist/
+build/
+out/
+
+# Ignore arquivos de configuração específicos para editores
+.vscode/
+.idea/
+*.code-workspace
+
+# Ignore arquivos de dependências
+node_modules/
+
+# Ignore arquivos de build do TypeScript
+*.js
+*.js.map
+*.d.ts
+
+# Ignore arquivos de compilação do TypeScript
+tsconfig.tsbuildinfo
+
+# Ignore arquivos temporários
+*.log
+*.tmp
+*.tmp.*
+*.swp
