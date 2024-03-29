@@ -1,7 +1,7 @@
 import Address from "./address";
 
 // entidade focada em negócio
-class Customer {
+export default class Customer {
 
 	_id: string;
 	_name: string;
@@ -22,7 +22,7 @@ class Customer {
 		if (this._id.length === 0) {
 			throw new Error("Id is required")
 		}
-	} 
+	}
 
 	changeName(name: string) {
 		this._name = name;
