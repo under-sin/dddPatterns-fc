@@ -3,16 +3,20 @@ import Address from "./address";
 // entidade focada em negócio
 export default class Customer {
 
-	_id: string;
-	_name: string;
-	_address!: Address;
-	_active: boolean = true;
+	private _id: string;
+	private _name: string;
+	private _address!: Address;
+	private _active: boolean = true;
 
 	constructor(id: string, name: string) {
 		this._id = id;
 		this._name = name;
 
 		this.validate()
+	}
+
+	get name(): string {
+		return this._name
 	}
 
 	validate() {
@@ -22,6 +26,10 @@ export default class Customer {
 		if (this._id.length === 0) {
 			throw new Error("Id is required")
 		}
+	}
+
+	isActive(): boolean {
+		return this._active;
 	}
 
 	changeName(name: string) {
@@ -37,5 +45,9 @@ export default class Customer {
 
 	deactivate() {
 		this._active = false;
+	}
+
+	set Address(address: Address) {
+		this._address = address
 	}
 } 
