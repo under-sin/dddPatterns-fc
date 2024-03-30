@@ -21,7 +21,7 @@ describe("Customer unit test", () => {
 
         expect(customer.name).toBe("Jane")
     });
-    
+
     it("should activate customer", () => {
         const customer = new Customer("123", "John");
         const address = new Address("Rua 1", 1, "123123", "Natal");
@@ -46,4 +46,15 @@ describe("Customer unit test", () => {
             customer.activate();
         }).toThrow("Address is mandatory to activate a costumer");
     });
+
+    it("should add reward points", () => {
+        const customer = new Customer("c1", "Customer 1");
+        expect(customer.rewardPoints).toBe(0);
+
+        customer.addRewardPoints(10);
+        expect(customer.rewardPoints).toBe(10);
+
+        customer.addRewardPoints(10);
+        expect(customer.rewardPoints).toBe(20);
+    })
 })
