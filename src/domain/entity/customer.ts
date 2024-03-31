@@ -5,7 +5,7 @@ export default class Customer {
 
 	private _id: string;
 	private _name: string;
-	private _address!: Address;
+	private _address: Address;
 	private _active: boolean = true;
 	private _rewardPoints: number = 0;
 
@@ -28,6 +28,10 @@ export default class Customer {
 		return this._rewardPoints;
 	}
 
+	get address(): Address {
+		return this._address;
+    }
+
 	validate() {
 		if (this._name.length === 0) {
 			throw new Error("Name is required")
@@ -44,6 +48,10 @@ export default class Customer {
 	changeName(name: string) {
 		this._name = name;
 	}
+
+	changeAddress(address: Address) {
+        this._address = address;
+    }
 
 	activate() {
 		if (this._address === undefined) {
