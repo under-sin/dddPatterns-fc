@@ -14,12 +14,24 @@ export default class OrderItem {
         this._quantity = quantity;
     }
 
+    get id(): string {
+        return this._id;
+    }
+
+    get name(): string {
+        return this._name;
+    }
+
     get quantity(): number {
         return this._quantity;
     }
 
     get price(): number {
         return this._price;
+    }
+
+    get product_id(): string {
+        return this._productId;
     }
 
     get totalPrice(): number {
