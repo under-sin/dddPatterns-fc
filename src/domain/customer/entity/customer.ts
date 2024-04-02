@@ -1,4 +1,4 @@
-import Address from "./address";
+import Address from "../value-object/address";
 
 // entidade focada em negócio
 export default class Customer {
